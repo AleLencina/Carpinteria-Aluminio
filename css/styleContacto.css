@@ -1,0 +1,44 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    position: relative;
+}
+
+.encabezadoContacto{
+    margin-top: 30px;
+    
+}
+
+h3{
+    color: blue;
+    text-align: center;
+    font-size: 50px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
+    
+}
+
+p{
+    text-align: center;
+}
+
+.contenedorFormulario{
+    display: grid;
+    /*grid-template-columns: 1fr auto;*/
+    margin: auto;
+    width: 50%;
+    height: 500px;
+    padding: 30px;
+
+}
+
+.itemFormulario{
+    margin: 20px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid rgb(2, 2, 71);
+}

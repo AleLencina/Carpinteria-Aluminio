@@ -1,0 +1,50 @@
+h3{
+    padding: 20px;
+    color: darkblue;
+}
+
+p{
+    padding-left: 15px;
+}
+
+.pDownload{
+    color: blue;
+    
+}
+
+.contenedorTarjetas{
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 50px;
+    gap: 50px;
+    
+}
+.tarjeta{
+    width: 180px;
+    height: 250px;
+    border-radius: 20px;
+    border: 1px solid grey;
+    margin: auto;
+    display: grid;
+    grid-template-rows: 2fr auto;
+    background-image: url(../img/pdfLogo.jpeg);
+    background-position: center;
+    background-size: 120px 150px;
+    background-repeat: no-repeat;
+}
+
+.tarjeta:hover{
+    box-shadow: 4px 4px 10px red;
+    transition: .1s;
+}
+
+.tituloTarjetas{
+    padding: 5px;
+    text-align: center;
+    text-shadow: 1px 1px 20px blue;
+}
+
+.imagenTarjetas{
+    
+}

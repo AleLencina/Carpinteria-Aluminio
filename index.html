@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>Carpinteria Aluminio</title>
+	
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	
+	
+	<!-- jsPDF -->
+	<!--<script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+	
+	<script type="text/javascript" src="JS/main.js"></script>
+	
+	
+    
+	<!-- bootstrap -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous"> <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+	<!-- ICONOS-->
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/fontawesome.min.css">
+
+</head>
+<body>
+	<div class= 'wrapper'>
+		<div class="banner-wrapper">
+<!-- BARRA DE NAVEGACION -->
+				<nav>
+					<input type="checkbox" id="check">
+					<label for="check" class="checkbtn">
+						<i class="fa-solid fa-bars"></i>
+					</label>
+
+
+							<ul>
+								<li> <a href="index.html">INICIO</a> </li>
+								<li> <a href="download.html">DOWNLOAD</a> </li>
+								<li> <a href="comunidad.html">COMUNIDAD</a> </li>
+								<li> <a href="contacto.html">CONTACTO</a> </li>
+							</ul>
+
+
+				</nav>
+
+		</div>
+
+		<!-- Calculadora + OPCIONES DE ABERTURAS-->
+		<div class="calculadora">
+			<div class="config-cal">
+				<select class="form-select" aria-label="1" autofocus="1" id="selectAbertura">
+					<option selected>Selecione Abertura</option>
+					<option value="1">HERRERO corrediza 2h</option>
+					<option value="2">HERRERO puerta balcon 2h</option>
+					<option value="3">HERRERO puerta balcon 3h</option>
+					<option value="4">HERRERO puerta 25mm</option>
+					<option value="5">HERRERO puerta 36mm</option>
+					<option value="6">MODENA corrediza 2h</option>
+					<option value="7">MODENA puerta balcon 2h</option>
+					<option value="8">MODENA puerta balcon 3h</option>
+					<option value="9">MODENA Puerta 25mm</option>
+					<option value="10">MODENA Puerta 36mm</option>
+					</select>
+
+					<input class="form-control" type="text" placeholder="Nombre del cliente" aria-label="default input example" id="nombreCliente">
+			</div>
+			<!-- CONTENEDOR CALCULADORA -->
+
+			<div class="content-cal" id="plantilla_herrero2h">
+				<div class="contenedor_imagen">
+						<img class="img-muestra" src="img/Herrero corrediza 2h.jpg">
+				</div>
+				
+				<div class="boton-presupuesto">
+						<button type="button" class="btn btn-success btn-lg" onclick= "calcularPresupuesto()" >Presupuesto - PDF</button>
+				</div>
+				<div class="boton-taller">
+					<button type="button" class="btn btn-success btn-lg" onclick= "calcularTaller()" >Taller - PDF</button>
+			    </div>
+
+
+
+				<div class="ancho-alto">
+					<form class="form-floating">
+				  <input type="text" class="form-control" id="dato_ancho" placeholder="" value="">
+				  <label for="floatingInputValue">ANCHO (mm)</label>
+					</form>
+					<form class="form-floating">
+					<input type="text" class="form-control" id="dato_alto" placeholder="" value="">
+					<label for="floatingInputValue">ALTO (mm)</label>
+					</form>
+					<form class="form-floating">
+					<input type="text" class="form-control" id="dato_unidades" placeholder="" value="">
+					<label for="floatingInputValue">Unidades</label>
+					</form>
+					<form class="form-floating">
+					<input type="text" class="form-control" id="dato_precio" placeholder="" value="">
+					<label for="floatingInputValue">Precio (kg)</label>
+					</form>
+
+				</div>
+
+<!-- ACCESORIOS -->
+				<div class="accesorios">
+            <hr>
+						<h3>Accesorios y vidrio</h3>
+
+						<div class="item_accesorios">
+		  				    <form class="form-floating">
+							<input type="text" class="form-control" id="dato_felpa" placeholder="" value="">
+							<label for="floatingInputValue">FELPA x metro ($)</label>
+							</form>
+	  					</div>
+
+					  	<div class="item_accesorios">
+						    <form class="form-floating">
+							<input type="text" class="form-control" id="dato_aldaba" placeholder="" value="">
+							<label for="floatingInputValue">Aldaba ($)</label>
+							</form>
+						</div>
+
+						<div class="item_accesorios">
+						    <form class="form-floating">
+							<input type="money" class="form-control" id="dato_ruedas" placeholder="" value="">
+							<label for="floatingInputValue">Ruedas c/u ($)</label>
+							</form>
+						</div>
+
+						<div class="item_accesorios">
+							<form class="form-floating">
+							<input type="money" class="form-control" id="dato_escuadras" placeholder="" value="">
+							<label for="floatingInputValue">Escuadras c/u ($)</label>
+							</form>
+						</div>
+
+						<div class="item_accesorios">
+							<form class="form-floating">
+							<input type="money" class="form-control" id="dato_vidrio" placeholder="" value="">
+							<label for="floatingInputValue">Vidrio M2 ($)</label>
+							</form>
+
+					    </div>
+				</div>
+<!-- GANACIAS -->
+				<div class="ganancia">
+			<hr>
+						<h3>Ganancia</h3>
+
+						<div class="item_ganancia">
+							<form class="form-floating">
+							<input type="number" class="form-control" id="dato_manodeobra" placeholder="" value="">
+							<label for="floatingInputValue">Mano de obra (%)</label>
+							</form>
+						</div>
+
+						<div class="item_ganancia">
+							<form class="form-floating">
+							<input type="money" class="form-control" id="dato_colocacion" placeholder="" value="">
+							<label for="floatingInputValue">Colocacion ($)</label>
+							</form>
+					  	</div>
+
+						<div class="item_ganancia">
+							<form class="form-floating">
+							<input type="money" class="form-control" id="dato_iva" placeholder="" value="">
+							<label for="floatingInputValue">IVA (%)</label>
+							</form>
+						</div>
+
+						<div class="item_ganancia">
+							<form class="form-floating">
+							<input type="money" class="form-control" id="dato_otros" placeholder="$" value="">
+							<label for="floatingInputValue">Otros ($)</label>
+							</form>
+						</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+	
+</body>
+
+<footer>
+	
+	<div class="footer">
+		Todos los derechos reservados
+	</div>
+
+</footer>
+
+</html>
